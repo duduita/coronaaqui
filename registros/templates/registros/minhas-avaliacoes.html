@@ -1,0 +1,22 @@
+{% extends "registros/layout.html" %}
+
+{% block body %}
+
+    <table id="customers">
+        <tr>
+          <th>Empresa</th>
+          <th>Nota</th>
+          <th>Comentário</th>
+        </tr>
+    <a href="{% url 'index' %} ">Voltar para página anterior</a>
+
+        {% for avaliacao in avaliacoes %}
+        <tr>
+            <td>{{ avaliacao.empresaname }}</td>
+            <td>{{ avaliacao.grade }}</td>
+            <td>{{ avaliacao.comment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
